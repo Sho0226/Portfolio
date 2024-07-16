@@ -14,12 +14,13 @@ const Home: React.FC = () => {
       </div>
       <div className={styles.section}>
         <div className={styles.sectionHeader}>スキル</div>
+        <div className={styles.subSectionHeader}>バックエンド</div>
         <ul>
-          <li className={styles.listItem}>HTML, CSS, React</li>
+          <li className={styles.listItem}>HTML, CSS, TypeScipt, React</li>
         </ul>
         <div className={styles.subSectionHeader}>バックエンド</div>
         <ul>
-          <li className={styles.listItem}>Node.js, vue.ls, Fastify</li>
+          <li className={styles.listItem}>TypeScipt, Node.js, vue.ls, Fastify</li>
         </ul>
         <div className={styles.subSectionHeader}>データベース</div>
         <ul>
