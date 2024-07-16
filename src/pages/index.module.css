@@ -1,9 +1,65 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  min-height: 100vh;
-  padding: 0 0.5rem;
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.sectionHeader {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.subSectionHeader {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.listItem {
+  margin-bottom: 10px;
+}
+
+.contactInfo a {
+  color: #06c;
+  text-decoration: none;
+}
+
+.contactInfo a:hover {
+  text-decoration: underline;
+}
+
+@media (width <= 768px) {
+  .header {
+    font-size: 20px;
+  }
+
+  .sectionHeader {
+    font-size: 18px;
+  }
+
+  .subSectionHeader {
+    font-size: 16px;
+  }
+
+  .listItem {
+    font-size: 16px;
+  }
+
+  .contactInfo a {
+    font-size: 16px;
+  }
 }
