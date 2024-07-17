@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import styles from './index.module.css';
 
 const Home: React.FC = () => {
@@ -14,19 +15,18 @@ const Home: React.FC = () => {
       </div>
       <div className={styles.section}>
         <div className={styles.sectionHeader}>スキル</div>
-        <div className={styles.subSectionHeader}>バックエンド</div>
+        <div className={styles.subSectionHeader}>フロントエンド</div>
         <ul>
-          <li className={styles.listItem}>HTML, CSS, TypeScipt, React</li>
+          <li className={styles.listItem}>HTML, CSS, TypeScript, React</li>
         </ul>
         <div className={styles.subSectionHeader}>バックエンド</div>
         <ul>
-          <li className={styles.listItem}>TypeScipt, Node.js, vue.ls, Fastify</li>
+          <li className={styles.listItem}>TypeScript, Node.js, Vue.js, Fastify</li>
         </ul>
         <div className={styles.subSectionHeader}>データベース</div>
         <ul>
           <li className={styles.listItem}>PostgreSQL, Prisma</li>
         </ul>
-
         <div className={styles.subSectionHeader}>API開発</div>
         <ul>
           <li className={styles.listItem}>Aspida</li>
@@ -58,10 +58,9 @@ const Home: React.FC = () => {
         <div className={styles.sectionHeader}>連絡先</div>
         <div className={styles.contactInfo}>
           <div>
-            Email: <a href="s1f102201616@toyo.jp">s1f102201616@toyo.jp</a>
+            Email: <a href="mailto:s1f102201616@toyo.jp">s1f102201616@toyo.jp</a>
           </div>
           <div>電話番号: 090-1413-0226</div>
-
           <div>
             GitHub: <a href="https://github.com/0226">https://github.com/0226</a>
           </div>
@@ -71,4 +70,23 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+const AnotherPage: React.FC = () => {
+  return <div>これは別のページです。</div>;
+};
+
+const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState<'home' | 'another'>('home');
+
+  return (
+    <div>
+      <div className={styles.navbar}>
+        <button onClick={() => setCurrentPage('home')}>Home</button>
+        <button onClick={() => setCurrentPage('another')}>Another Page</button>
+      </div>
+      {currentPage === 'home' && <Home />}
+      {currentPage === 'another' && <AnotherPage />}
+    </div>
+  );
+};
+
+export default App;
