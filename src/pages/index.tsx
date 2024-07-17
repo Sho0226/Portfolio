@@ -4,87 +4,94 @@ import styles from './index.module.css';
 const Home: React.FC = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.header}>自己紹介</div>
-      <div className={styles.section}>
-        <div className={styles.sectionHeader}>氏名</div>
-        <div>勝間田翔</div>
-      </div>
-      <div className={styles.section}>
-        <div className={styles.sectionHeader}>出身大学</div>
-        <div>東洋大学 情報連携学部 情報連携学科</div>
-      </div>
-      <div className={styles.section}>
-        <div className={styles.sectionHeader}>スキル</div>
-        <div className={styles.subSectionHeader}>フロントエンド</div>
-        <ul>
-          <li className={styles.listItem}>HTML, CSS, TypeScript, React</li>
-        </ul>
-        <div className={styles.subSectionHeader}>バックエンド</div>
-        <ul>
-          <li className={styles.listItem}>TypeScript, Node.js, Vue.js, Fastify</li>
-        </ul>
-        <div className={styles.subSectionHeader}>データベース</div>
-        <ul>
-          <li className={styles.listItem}>PostgreSQL, Prisma</li>
-        </ul>
-        <div className={styles.subSectionHeader}>API開発</div>
-        <ul>
-          <li className={styles.listItem}>Aspida</li>
-        </ul>
-        <div className={styles.subSectionHeader}>その他</div>
-        <ul>
-          <li className={styles.listItem}>Git, Docker, Linux</li>
-        </ul>
-      </div>
-      <div className={styles.section}>
-        <div className={styles.sectionHeader}>受賞歴</div>
-        <ul>
-          <li className={styles.listItem}>【技育CAMP】ハッカソン Vol.8 努力賞</li>
-        </ul>
-      </div>
-      <div className={styles.section}>
-        <div className={styles.sectionHeader}>自己PR</div>
+      <div className={styles.header}>Home</div>
+      <div>Welcome to my portfolio website.</div>
+    </div>
+  );
+};
+
+const AboutMe: React.FC = () => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>About Me</div>
+      <div>I am Sho Katsumata, a passionate software engineer.</div>
+    </div>
+  );
+};
+
+const Skills: React.FC = () => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>Skills</div>
+      <ul>
+        <li>HTML, CSS, TypeScript, React</li>
+        <li>TypeScript, Node.js, Vue.js, Fastify</li>
+        <li>PostgreSQL, Prisma</li>
+        <li>Aspida</li>
+        <li>Git, Docker, Linux</li>
+      </ul>
+    </div>
+  );
+};
+
+const Projects: React.FC = () => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>Projects</div>
+      <div>Here are some of my projects.</div>
+    </div>
+  );
+};
+
+const Achievements: React.FC = () => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>Achievements</div>
+      <ul>
+        <li>【Gakuiku CAMP】 Hackathon Vol.8 Effort Award</li>
+      </ul>
+    </div>
+  );
+};
+
+const Contact: React.FC = () => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>Contact</div>
+      <div className={styles.contactInfo}>
         <div>
-          私は常に新しい技術や知識を学ぶことに情熱を持ち、困難な問題にも挑戦する姿勢を持っています。大学のプロジェクトでは、チームリーダーとしてメンバーを統率し、大規模なシステム開発を成功させました。この経験から、リーダーシップと問題解決能力を培いました。例えば、あるプロジェクトでは、システムの性能問題に直面しましたが、新しいアルゴリズムを導入することで解決し、プロジェクトを無事完了させました。
+          Email: <a href="mailto:s1f102201616@toyo.jp">s1f102201616@toyo.jp</a>
         </div>
-      </div>
-      <div className={styles.section}>
-        <div className={styles.sectionHeader}>入社後のビジョン</div>
+        <div>Phone: 090-1413-0226</div>
         <div>
-          貴社でエンジニアとして働くことで、さらに高度な技術を習得し、貴社のプロジェクトに貢献したいと考えています。特に、クラウド技術やAI分野での開発に興味があり、これらの分野でリーダーシップを発揮し、チームと共に革新的なプロジェクトを推進していきたいです。
-        </div>
-      </div>
-      <div className={styles.section}>
-        <div className={styles.sectionHeader}>連絡先</div>
-        <div className={styles.contactInfo}>
-          <div>
-            Email: <a href="mailto:s1f102201616@toyo.jp">s1f102201616@toyo.jp</a>
-          </div>
-          <div>電話番号: 090-1413-0226</div>
-          <div>
-            GitHub: <a href="https://github.com/0226">https://github.com/0226</a>
-          </div>
+          GitHub: <a href="https://github.com/0226">https://github.com/0226</a>
         </div>
       </div>
     </div>
   );
 };
 
-const AnotherPage: React.FC = () => {
-  return <div>これは別のページです。</div>;
-};
-
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<'home' | 'another'>('home');
+  const [currentPage, setCurrentPage] = useState<
+    'home' | 'aboutMe' | 'skills' | 'projects' | 'achievements' | 'contact'
+  >('home');
 
   return (
     <div>
       <div className={styles.navbar}>
         <button onClick={() => setCurrentPage('home')}>Home</button>
-        <button onClick={() => setCurrentPage('another')}>Another Page</button>
+        <button onClick={() => setCurrentPage('aboutMe')}>About Me</button>
+        <button onClick={() => setCurrentPage('skills')}>Skills</button>
+        <button onClick={() => setCurrentPage('projects')}>Projects</button>
+        <button onClick={() => setCurrentPage('achievements')}>Achievements</button>
+        <button onClick={() => setCurrentPage('contact')}>Contact</button>
       </div>
       {currentPage === 'home' && <Home />}
-      {currentPage === 'another' && <AnotherPage />}
+      {currentPage === 'aboutMe' && <AboutMe />}
+      {currentPage === 'skills' && <Skills />}
+      {currentPage === 'projects' && <Projects />}
+      {currentPage === 'achievements' && <Achievements />}
+      {currentPage === 'contact' && <Contact />}
     </div>
   );
 };
