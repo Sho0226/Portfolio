@@ -1,9 +1,10 @@
-/* Navbar Styles */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
+  cursor: none; /* ナビバーでデフォルトカーソルを隠す */
+  user-select: none;
   background-color: #a0b0ba;
 }
 
@@ -19,12 +20,28 @@
 }
 
 .navLinks a {
+  position: relative;
   font-size: 16px;
   color: #fff;
   text-decoration: none;
+  cursor: none; /* リンクでデフォルトカーソルを隠す */
   transition: color 0.3s;
+}
+
+.navLinks a::after {
+  position: absolute;
+  right: -20px;
+  opacity: 0;
+  transition:
+    opacity 0.3s,
+    right 0.3s;
 }
 
 .navLinks a:hover {
   color: #ddd;
+}
+
+.navLinks a:hover::after {
+  right: 0;
+  opacity: 1;
 }
