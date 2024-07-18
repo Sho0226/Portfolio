@@ -7,8 +7,11 @@ const Home: React.FC = () => {
     <>
       <Navbar />
       <div className={styles.container}>
-        <div className={styles.header}>Home</div>
-        <p>Welcome to my portfolio website.</p>
+        <div className={styles.illustrationContainer}>
+          <div className={styles.overlay}>
+            <div className={styles.overlayText}>Welcome to my portfolio</div>
+          </div>
+        </div>
       </div>
     </>
   );
