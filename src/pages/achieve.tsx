@@ -4,17 +4,17 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import styles from './index.module.css';
 
-type AboutProps = {
+type AchievementsProps = {
   data: string | null;
 };
 
-const About: React.FC<AboutProps> = ({ data }) => {
+const Achievements: React.FC<AchievementsProps> = ({ data }) => {
   return (
     <>
       <Navbar />
       <div className={styles.container}>
-        <div className={styles.header}>About</div>
-        <div>{data !== null && data !== '' ? data : 'No data available'}</div>
+        <div className={styles.header}>Achievements</div>
+        <div>{data}</div>
       </div>
     </>
   );
@@ -27,7 +27,7 @@ export async function getStaticProps() {
   try {
     const jsonData = fs.readFileSync(filePath, 'utf-8');
     const parsedData = JSON.parse(jsonData);
-    data = typeof parsedData.about === 'string' ? parsedData.about : null;
+    data = typeof parsedData.achievements === 'string' ? parsedData.achievements : null;
   } catch (error) {
     console.error('Error reading data.json:', error);
   }
@@ -35,4 +35,4 @@ export async function getStaticProps() {
   return { props: { data } };
 }
 
-export default About;
+export default Achievements;
