@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  user-select: none; /* テキストの選択を禁止 */
+}
+
+.header {
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  user-select: none; /* テキストの選択を禁止 */
+}
+
+.content {
+  max-width: 800px;
+  user-select: none; /* テキストの選択を禁止 */
+}
+
+/* カスタムカーソルスタイル */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 15px;
+  height: 15px;
+  pointer-events: none;
+  background-color: black;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+
+.cursor.white {
+  background-color: white;
+}

@@ -2,20 +2,24 @@ import fs from 'fs';
 import path from 'path';
 import React from 'react';
 import Navbar from '../../components/Navbar';
-import styles from './index.module.css';
+import useCustomCursor from '../../hooks/useCustomCursor'; // カスタムフックをインポート
+import commonStyles from './commonStyle.module.css';
 
 type AboutProps = {
   data: string | null;
 };
 
 const About: React.FC<AboutProps> = ({ data }) => {
+  const { cursorRef, navbarRef } = useCustomCursor(); // カスタムフックを使用
+
   return (
     <>
-      <Navbar />
-      <div className={styles.container}>
-        <div className={styles.header}>About</div>
+      <Navbar ref={navbarRef} />
+      <div className={commonStyles.container}>
+        <div className={commonStyles.header}>About</div>
         <div>{data !== null && data !== '' ? data : 'No data available'}</div>
       </div>
+      <div ref={cursorRef} className={commonStyles.cursor} />
     </>
   );
 };

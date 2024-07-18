@@ -2,29 +2,23 @@ import fs from 'fs';
 import path from 'path';
 import React from 'react';
 import Navbar from '../../components/Navbar';
-import styles from './index.module.css';
+import useCustomCursor from '../../hooks/useCustomCursor';
+import commonStyles from './commonStyle.module.css';
 
 type ContactProps = {
   data: string | null;
 };
 
 const Contact: React.FC<ContactProps> = ({ data }) => {
+  const { cursorRef, navbarRef } = useCustomCursor();
   return (
     <>
-      <Navbar />
-      <div className={styles.container}>
-        <div className={styles.header}>Contact</div>
-        {/* <div className={styles.contactInfo}> */}
-        <div>{data}</div>
-        {/* <div>
-            Email: <a href="mailto:s1f102201616@toyo.jp">s1f102201616@toyo.jp</a>
-          </div>
-          <div>Phone: 090-1413-0226</div>
-          <div>
-            GitHub: <a href="https://github.com/0226">https://github.com/0226</a>
-          </div>
-        </div> */}
+      <Navbar ref={navbarRef} />
+      <div className={commonStyles.container}>
+        <div className={commonStyles.header}>Contact</div>
+        <div>{data !== null && data !== '' ? data : 'No data available'}</div>
       </div>
+      <div ref={cursorRef} className={commonStyles.cursor} />
     </>
   );
 };

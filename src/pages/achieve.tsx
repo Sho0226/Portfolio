@@ -2,20 +2,24 @@ import fs from 'fs';
 import path from 'path';
 import React from 'react';
 import Navbar from '../../components/Navbar';
-import styles from './index.module.css';
+import useCustomCursor from '../../hooks/useCustomCursor';
+import commonStyles from './commonStyle.module.css';
 
 type AchievementsProps = {
   data: string | null;
 };
 
 const Achievements: React.FC<AchievementsProps> = ({ data }) => {
+  const { cursorRef, navbarRef } = useCustomCursor();
+
   return (
     <>
-      <Navbar />
-      <div className={styles.container}>
-        <div className={styles.header}>Achievements</div>
-        <div>{data}</div>
+      <Navbar ref={navbarRef} />
+      <div className={commonStyles.container}>
+        <div className={commonStyles.header}>Achievements</div>
+        <div>{data !== null && data !== '' ? data : 'No data available'}</div>
       </div>
+      <div ref={cursorRef} className={commonStyles.cursor} />
     </>
   );
 };
