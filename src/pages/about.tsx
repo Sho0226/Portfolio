@@ -3,7 +3,7 @@ import path from 'path';
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import useCustomCursor from '../../hooks/useCustomCursor'; // カスタムフックをインポート
-import commonStyles from './commonStyle.module.css';
+import commonStyles from '../styles/commonStyle.module.css';
 
 type AboutProps = {
   data: string | null;

@@ -3,7 +3,7 @@ import path from 'path';
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import useCustomCursor from '../../hooks/useCustomCursor';
-import commonStyles from './commonStyle.module.css';
+import commonStyles from '../styles/commonStyle.module.css';
 
 type ContactProps = {
   data: string | null;

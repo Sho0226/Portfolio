@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import commonStyles from '/home/iniad/Portfolio/src/pages/commonStyle.module.css';
+import commonStyles from '../src/styles/commonStyle.module.css';
 
 const useCustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
