@@ -1,40 +1,85 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: #a0b0ba;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.navLinks button {
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.3s;
+}
+
+.navLinks button:hover {
+  color: #ddd;
+}
+
+/* Main Container */
 .container {
   max-width: 1200px;
   padding: 20px;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
 }
 
+/* Headers */
 .header {
-  margin-bottom: 10px;
-  font-size: 24px;
+  margin-bottom: 20px;
+  font-size: 28px;
   font-weight: bold;
+  color: #333;
   text-align: center;
 }
 
-.section {
-  margin-bottom: 20px;
-}
-
 .sectionHeader {
-  margin-bottom: 10px;
-  font-size: 20px;
+  margin-bottom: 15px;
+  font-size: 22px;
   font-weight: bold;
+  color: #555;
 }
 
 .subSectionHeader {
   margin-top: 10px;
-  margin-bottom: 5px;
-  font-size: 18px;
+  margin-bottom: 10px;
+  font-size: 20px;
   font-weight: bold;
+  color: #666;
 }
 
+/* Lists */
 .listItem {
   margin-bottom: 10px;
+  font-size: 18px;
+  color: #777;
 }
 
 .contactInfo a {
-  color: #06c;
+  color: #007bff;
   text-decoration: none;
 }
 
@@ -44,15 +89,15 @@
 
 @media (width <= 768px) {
   .header {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .sectionHeader {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .subSectionHeader {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .listItem {
@@ -62,26 +107,4 @@
   .contactInfo a {
     font-size: 16px;
   }
-}
-
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.navbar button {
-  display: block;
-  float: left;
-  padding: 14px 16px;
-  color: #f2f2f2;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-
-.navbar button:hover {
-  color: black;
-  background-color: #ddd;
 }

@@ -2,12 +2,12 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import styles from './index.module.css';
 
-const Home: React.FC<{ data: string }> = ({ data }) => {
+const Projects: React.FC<{ data: string }> = ({ data }) => {
   return (
     <>
       <Navbar />
       <div className={styles.container}>
-        <div className={styles.header}>Home</div>
+        <div className={styles.header}>Projects</div>
         <div>{data}</div>
       </div>
     </>
@@ -22,11 +22,11 @@ export async function getStaticProps() {
     }
     const data = await res.json();
 
-    return { props: { data: data.news } };
+    return { props: { data: data.stockist } };
   } catch (error) {
     console.error(error);
     return { props: { data: 'Error loading data' } };
   }
 }
 
-export default Home;
+export default Projects;
