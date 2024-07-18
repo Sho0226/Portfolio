@@ -5,14 +5,13 @@ import styles from './Navbar.module.css';
 const Navbar: React.FC = () => {
   return (
     <div className={styles.navbar}>
-      <div className={styles.logo}>cineca</div>
+      <div className={styles.logo}>My Portfolio</div>
       <div className={styles.navLinks}>
-        <Link href="/">news</Link>
-        <Link href="/about">about</Link>
-        <Link href="/skills">works</Link>
-        <Link href="/projects">stockist</Link>
-        <Link href="/achievements">shop</Link>
-        <Link href="/contact">contact</Link>
+        <Link href="/about">About</Link>
+        <Link href="/skills">Skills</Link>
+        <Link href="/works">Works</Link>
+        <Link href="/achievements">Achievements</Link>
+        <Link href="/contact">Contact</Link>
       </div>
     </div>
   );

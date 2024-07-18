@@ -3,8 +3,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const data = {
     news: 'Latest news',
-    about: 'About our company',
-    works: 'Our works',
+    about: 'About me',
+    works: 'My works',
     stockist: 'Stockist details',
     shop: 'Shop information',
     contact: 'Contact us',
