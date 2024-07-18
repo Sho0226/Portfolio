@@ -3,12 +3,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
+  overflow-x: auto;
   cursor: none; /* ナビバーでデフォルトカーソルを隠す */
   user-select: none;
   background-color: #a0b0ba;
 }
 
 .logo {
+  padding-right: 5%;
   font-size: 28px;
   font-weight: bold;
   color: #fff;

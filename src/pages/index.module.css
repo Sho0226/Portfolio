@@ -57,16 +57,6 @@
   transform: translate(-50%, -50%);
 }
 
-@media (width <= 768px) {
-  .header {
-    font-size: 24px;
-  }
-
-  .illustrationContainer {
-    max-width: 100%;
-  }
-}
-
 /* カスタムカーソルスタイル */
 .cursor {
   position: fixed;
@@ -84,4 +74,34 @@
 
 .cursor.white {
   background-color: white;
+}
+
+/* レスポンシブデザイン */
+@media (width <= 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navLinks a {
+    font-size: 14px;
+  }
+
+  .header {
+    font-size: 24px;
+  }
+
+  .overlayText {
+    font-size: 8vh;
+  }
 }
