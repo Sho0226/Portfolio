@@ -172,3 +172,20 @@
 .deployLink:hover {
   color: #ff6347;
 }
+
+.achievementsSection {
+  width: 100%;
+  padding: 20px;
+  margin-top: 50px;
+  background: #2c2c2c;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+}
+
+.achievementItem {
+  margin-bottom: 00;
+  font-size: 1.2em;
+}
+
+.achievementpadding {
+  margin-bottom: 270px;
+}

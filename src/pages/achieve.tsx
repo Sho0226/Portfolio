@@ -5,9 +5,9 @@ import Navbar from '../../components/Navbar';
 import useCustomCursor from '../../hooks/useCustomCursor';
 import commonStyles from '../styles/commonStyle.module.css';
 
-type AchievementsProps = {
+interface AchievementsProps {
   data: string | null;
-};
+}
 
 const Achievements: React.FC<AchievementsProps> = ({ data }) => {
   const { cursorRef, navbarRef } = useCustomCursor();
@@ -16,8 +16,17 @@ const Achievements: React.FC<AchievementsProps> = ({ data }) => {
     <>
       <Navbar ref={navbarRef} />
       <div className={commonStyles.container}>
-        <div className={commonStyles.header}>受賞歴</div>
-        <div>{data !== null && data !== '' ? data : 'No data available'}</div>
+        <div className={commonStyles.header} />
+        <span className={commonStyles.headerText}>
+          <h1>受賞歴</h1>
+          <div className={commonStyles.achievementsSection}>
+            <div className={commonStyles.achievementItem}>
+              <h2>【技育CAMP】ハッカソン Vol.8 努力賞</h2>
+            </div>{' '}
+          </div>{' '}
+          <div className={commonStyles.achievementpadding} />
+        </span>
+        {data !== null && data !== '' ? data : 'No data available'}
       </div>
       <div ref={cursorRef} className={commonStyles.cursor} />
     </>
