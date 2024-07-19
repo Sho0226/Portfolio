@@ -5,17 +5,13 @@
   padding: 20px;
   text-align: center;
   user-select: none; /* テキストの選択を禁止 */
+  background-color: #221f1d;
 }
 
 .header {
   margin-bottom: 20px;
   font-size: 36px;
   font-weight: bold;
-  user-select: none; /* テキストの選択を禁止 */
-}
-
-.content {
-  max-width: 800px;
   user-select: none; /* テキストの選択を禁止 */
 }
 
@@ -28,7 +24,7 @@
     width: 15px;
     height: 15px;
     pointer-events: none;
-    background-color: black;
+    background-color: white;
     border-radius: 50%;
     transition: background-color 0.3s ease;
     transform: translate(-50%, -50%);
@@ -37,4 +33,41 @@
   .cursor.white {
     background-color: white;
   }
+}
+
+.button {
+  position: relative;
+  height: 20vh;
+  overflow: hidden;
+  color: #333;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 30px;
+  transition: all 0.5s ease-in-out;
+}
+
+.type1::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 10px;
+  height: 10px;
+  visibility: hidden;
+  background-color: #333;
+  border-radius: 30px;
+  transition: all 0.5s ease-in-out;
+}
+
+.button:hover,
+.button.hovered {
+  color: #fff;
+  border: none;
+  box-shadow: 1px 1px 200px #252525;
+}
+
+.type1:hover::after,
+.type1.hovered::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
 }

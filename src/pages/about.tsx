@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import useCustomCursor from '../../hooks/useCustomCursor'; // カスタムフックをインポート
 import commonStyles from '../styles/commonStyle.module.css';
@@ -11,19 +11,32 @@ type AboutProps = {
 
 const About: React.FC<AboutProps> = ({ data }) => {
   const { cursorRef, navbarRef } = useCustomCursor(); // カスタムフックを使用
+  const [hovered, setHovered] = useState<boolean[]>(new Array(7).fill(false));
+
+  const handleMouseEnter = (index: number) => {
+    setHovered((prevState) => {
+      const newState = [...prevState];
+      newState[index] = true;
+      return newState;
+    });
+  };
 
   return (
     <>
       <Navbar ref={navbarRef} />
       <div className={commonStyles.container}>
         <div className={commonStyles.header}>
-          <h1>自己紹介</h1>
-          <h2>氏名 </h2>
-          <h2>生年月日</h2>
-          <h2>大学・学部</h2>
-          <h2>希望職種</h2>
-          <h2>趣味・特技</h2>
-          <h2>自己PR</h2>
+          {['氏名', '生年月日', '大学・学部', '希望職種', '趣味・特技', '自己PR'].map(
+            (text, index) => (
+              <h2
+                key={index}
+                className={`${commonStyles.button} ${commonStyles.type1} ${hovered[index] ? commonStyles.hovered : ''}`}
+                onMouseEnter={() => handleMouseEnter(index)}
+              >
+                {text}
+              </h2>
+            ),
+          )}
         </div>
         <div>{data !== null && data !== '' ? data : 'No data available'}</div>
       </div>
