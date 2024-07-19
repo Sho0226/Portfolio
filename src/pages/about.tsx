@@ -16,7 +16,13 @@ const About: React.FC<AboutProps> = ({ data }) => {
     <>
       <Navbar ref={navbarRef} />
       <div className={commonStyles.container}>
-        <div className={commonStyles.header}>About</div>
+        <div className={commonStyles.header}>
+          <h1>自己紹介</h1>
+          <h2>氏名 </h2>
+          <h2>生年月日</h2>
+          <h2>大学・学部</h2>
+          <h2>希望職種</h2>
+        </div>
         <div>{data !== null && data !== '' ? data : 'No data available'}</div>
       </div>
       <div ref={cursorRef} className={commonStyles.cursor} />
