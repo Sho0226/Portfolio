@@ -58,22 +58,24 @@
 }
 
 /* カスタムカーソルスタイル */
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  width: 15px;
-  height: 15px;
-  pointer-events: none;
-  background-color: black;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-  transform: translate(-50%, -50%);
-}
+@media (hover: hover) and (pointer: fine) {
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 15px;
+    height: 15px;
+    pointer-events: none;
+    background-color: black;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    transform: translate(-50%, -50%);
+  }
 
-.cursor.white {
-  background-color: white;
+  .cursor.white {
+    background-color: white;
+  }
 }
 
 /* レスポンシブデザイン */
