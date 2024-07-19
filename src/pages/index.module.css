@@ -17,7 +17,7 @@
   position: relative;
   width: 100%;
   height: calc(100vh - 60px);
-  background-image: url('/static/background.webp');
+  background-image: url('/static/background.png');
   background-position: center;
   background-size: cover;
 }
