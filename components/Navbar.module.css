@@ -39,11 +39,13 @@
     right 0.3s;
 }
 
-.navLinks a:hover {
-  color: #ddd;
-}
+@media (hover: hover) and (pointer: fine) {
+  .navLinks a:hover {
+    color: #ddd;
+  }
 
-.navLinks a:hover::after {
-  right: 0;
-  opacity: 1;
+  .navLinks a:hover::after {
+    right: 0;
+    opacity: 1;
+  }
 }
