@@ -16,8 +16,53 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
     <>
       <Navbar ref={navbarRef} />
       <div className={commonStyles.container}>
-        <div className={commonStyles.header}>スキルセット</div>
-        <div>{data !== null && data !== '' ? data : 'No data available'}</div>
+        <div className={commonStyles.header}>
+          <span className={commonStyles.headerText}>
+            <h1>スキル</h1>
+            <br />
+            <div className={commonStyles.skillSection}>
+              <h2>フロントエンド</h2>
+              <ul className={commonStyles.skillList}>
+                <li className={commonStyles.skillItem}>
+                  <span className={commonStyles.skillName}>TypeScript</span>
+                  <span className={commonStyles.skillLevel}>★★★★☆</span>
+                </li>
+                <li className={commonStyles.skillItem}>
+                  <span className={commonStyles.skillName}>HTML/CSS</span>
+                  <span className={commonStyles.skillLevel}>★★★☆☆</span>
+                </li>
+                <li className={commonStyles.skillItem}>
+                  <span className={commonStyles.skillName}>React</span>
+                  <span className={commonStyles.skillLevel}>★★★☆☆</span>
+                </li>
+                <li className={commonStyles.skillItem}>
+                  <span className={commonStyles.skillName}>Next.js</span>
+                  <span className={commonStyles.skillLevel}>★★★☆☆</span>
+                </li>
+              </ul>
+            </div>
+            <div className={commonStyles.skillSection}>
+              <h2>バックエンド</h2>
+              <ul className={commonStyles.skillList}>
+                <li className={commonStyles.skillItem}>
+                  <span className={commonStyles.skillName}>TypeScript</span>
+                  <span className={commonStyles.skillLevel}>★★★☆☆</span>
+                </li>
+                <li className={commonStyles.skillItem}>
+                  <span className={commonStyles.skillName}>Prisma</span>
+                  <span className={commonStyles.skillLevel}>★☆☆☆☆</span>
+                </li>
+                <li className={commonStyles.skillItem}>
+                  <span className={commonStyles.skillName}>Fastify</span>
+                  <span className={commonStyles.skillLevel}>★☆☆☆☆</span>
+                </li>
+              </ul>
+            </div>
+          </span>
+        </div>
+        <div className={commonStyles.textcontainer} />
+        <div className={commonStyles.descriptioncontainer} />
+        {data !== null && data !== '' ? data : 'No data available'}{' '}
       </div>
       <div ref={cursorRef} className={commonStyles.cursor} />
     </>

@@ -65,6 +65,7 @@
 .button:hover,
 .button.hovered {
   color: #fff;
+  cursor: none;
   border: none;
   box-shadow: 1px 1px 200px #252525;
 }
@@ -110,4 +111,64 @@
 .button:hover .descriptioncontainer,
 .button.hovered .descriptioncontainer {
   opacity: 1;
+}
+
+.headerText {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.skillSection,
+.worksSection {
+  margin-top: 20px;
+}
+
+.skillList,
+.worksList {
+  padding: 0;
+  list-style-type: none;
+}
+
+.skillItem,
+.workItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.skillName,
+.workTitle {
+  font-weight: bold;
+}
+
+.skillLevel,
+.workDescription {
+  color: #aaa;
+}
+
+.gameLinks {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.gameLink {
+  margin-bottom: 10px;
+}
+
+.workLink,
+.sourceLink,
+.deployLink {
+  margin-left: 10px;
+  color: #5f5f5f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.workLink:hover,
+.sourceLink:hover,
+.deployLink:hover {
+  color: #ff6347;
 }
