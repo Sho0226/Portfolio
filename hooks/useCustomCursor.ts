@@ -25,21 +25,25 @@ const useCustomCursor = () => {
       }
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
+    const mediaQuery = window.matchMedia('(pointer: fine)');
 
-    const navbar = navbarRef.current;
-    if (navbar) {
-      navbar.addEventListener('mouseenter', handleMouseEnterNavbar);
-      navbar.addEventListener('mouseleave', handleMouseLeaveNavbar);
-    }
+    if (mediaQuery.matches) {
+      document.addEventListener('mousemove', handleMouseMove);
 
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      const navbar = navbarRef.current;
       if (navbar) {
-        navbar.removeEventListener('mouseenter', handleMouseEnterNavbar);
-        navbar.removeEventListener('mouseleave', handleMouseLeaveNavbar);
+        navbar.addEventListener('mouseenter', handleMouseEnterNavbar);
+        navbar.addEventListener('mouseleave', handleMouseLeaveNavbar);
       }
-    };
+
+      return () => {
+        document.removeEventListener('mousemove', handleMouseMove);
+        if (navbar) {
+          navbar.removeEventListener('mouseenter', handleMouseEnterNavbar);
+          navbar.removeEventListener('mouseleave', handleMouseLeaveNavbar);
+        }
+      };
+    }
   }, []);
 
   return { cursorRef, navbarRef };
