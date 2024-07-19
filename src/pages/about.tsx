@@ -9,9 +9,18 @@ type AboutProps = {
   data: string | null;
 };
 
+const descriptions = [
+  '氏名を入力します。',
+  '生年月日を入力します。',
+  '大学・学部を入力します。',
+  '希望職種を入力します。',
+  '趣味・特技を入力します。',
+  '自己PRを入力します。',
+];
+
 const About: React.FC<AboutProps> = ({ data }) => {
   const { cursorRef, navbarRef } = useCustomCursor(); // カスタムフックを使用
-  const [hovered, setHovered] = useState<boolean[]>(new Array(7).fill(false));
+  const [hovered, setHovered] = useState<boolean[]>(new Array(6).fill(false));
 
   const handleMouseEnter = (index: number) => {
     setHovered((prevState) => {
@@ -28,17 +37,20 @@ const About: React.FC<AboutProps> = ({ data }) => {
         <div className={commonStyles.header}>
           {['氏名', '生年月日', '大学・学部', '希望職種', '趣味・特技', '自己PR'].map(
             (text, index) => (
-              <h2
+              <div
                 key={index}
-                className={`${commonStyles.button} ${commonStyles.type1} ${hovered[index] ? commonStyles.hovered : ''}`}
+                className={`${commonStyles.button} ${commonStyles.type1} ${hovered[index] ? commonStyles.hovered : ''} ${index % 2 === 0 ? commonStyles.left : commonStyles.right}`}
                 onMouseEnter={() => handleMouseEnter(index)}
               >
-                {text}
-              </h2>
+                <h2>{text}</h2>
+                <div className={commonStyles.description}>{descriptions[index]}</div>
+              </div>
             ),
           )}
         </div>
-        <div>{data !== null && data !== '' ? data : 'No data available'}</div>
+        <div className={commonStyles.content}>
+          {data !== null && data !== '' ? data : 'No data available'}
+        </div>
       </div>
       <div ref={cursorRef} className={commonStyles.cursor} />
     </>

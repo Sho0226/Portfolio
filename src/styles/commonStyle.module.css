@@ -4,7 +4,7 @@
   align-items: center;
   padding: 20px;
   text-align: center;
-  user-select: none; /* テキストの選択を禁止 */
+  user-select: none;
   background-color: #221f1d;
 }
 
@@ -12,7 +12,12 @@
   margin-bottom: 20px;
   font-size: 36px;
   font-weight: bold;
-  user-select: none; /* テキストの選択を禁止 */
+  user-select: none;
+}
+
+.content {
+  max-width: 800px;
+  user-select: none;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -37,7 +42,10 @@
 
 .button {
   position: relative;
+  align-items: center;
+  justify-content: center;
   height: 20vh;
+  margin-bottom: 20px;
   overflow: hidden;
   color: #333;
   cursor: pointer;
@@ -54,6 +62,7 @@
   width: 10px;
   height: 10px;
   visibility: hidden;
+  content: '';
   background-color: #333;
   border-radius: 30px;
   transition: all 0.5s ease-in-out;
@@ -70,4 +79,25 @@
 .type1.hovered::after {
   visibility: visible;
   transform: scale(100) translateX(2px);
+}
+
+.description {
+  position: absolute;
+  color: #fff;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.button:hover .description,
+.button.hovered .description {
+  opacity: 1;
+}
+
+.left {
+  flex-direction: row;
+}
+
+.right {
+  flex-direction: row-reverse;
 }
