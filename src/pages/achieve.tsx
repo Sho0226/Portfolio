@@ -16,7 +16,7 @@ const Achievements: React.FC<AchievementsProps> = ({ data }) => {
     <>
       <Navbar ref={navbarRef} />
       <div className={commonStyles.container}>
-        <div className={commonStyles.header}>Achievements</div>
+        <div className={commonStyles.header}>受賞歴</div>
         <div>{data !== null && data !== '' ? data : 'No data available'}</div>
       </div>
       <div ref={cursorRef} className={commonStyles.cursor} />

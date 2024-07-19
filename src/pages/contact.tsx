@@ -15,7 +15,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
     <>
       <Navbar ref={navbarRef} />
       <div className={commonStyles.container}>
-        <div className={commonStyles.header}>Contact</div>
+        <div className={commonStyles.header}>連絡先等</div>
         <div>{data !== null && data !== '' ? data : 'No data available'}</div>
       </div>
       <div ref={cursorRef} className={commonStyles.cursor} />

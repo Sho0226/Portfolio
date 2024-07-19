@@ -22,6 +22,8 @@ const About: React.FC<AboutProps> = ({ data }) => {
           <h2>生年月日</h2>
           <h2>大学・学部</h2>
           <h2>希望職種</h2>
+          <h2>趣味・特技</h2>
+          <h2>自己PR</h2>
         </div>
         <div>{data !== null && data !== '' ? data : 'No data available'}</div>
       </div>

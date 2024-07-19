@@ -16,7 +16,7 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
     <>
       <Navbar ref={navbarRef} />
       <div className={commonStyles.container}>
-        <div className={commonStyles.header}>Skills</div>
+        <div className={commonStyles.header}>スキルセット</div>
         <div>{data !== null && data !== '' ? data : 'No data available'}</div>
       </div>
       <div ref={cursorRef} className={commonStyles.cursor} />
