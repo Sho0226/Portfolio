@@ -189,3 +189,26 @@
 .achievementpadding {
   margin-bottom: 270px;
 }
+
+.link {
+  text-decoration: underline; /* リンクの下線 */
+  transition: color 0.5s ease;
+}
+
+.link:hover {
+  color: yellow; /* ホバー時のリンクの色 */
+}
+
+.contactLink {
+  text-decoration: underline; /* リンクの下線 */
+  transition: color 0.5s ease;
+}
+
+.contactLink:hover {
+  color: gray; /* ホバー時のリンクの色 */
+}
+
+.contactRow {
+  width: 100%;
+  margin-top: 9.1%;
+}

@@ -22,8 +22,14 @@ const Achievements: React.FC<AchievementsProps> = ({ data }) => {
           <div className={commonStyles.achievementsSection}>
             <div className={commonStyles.achievementItem}>
               <h2>【技育CAMP】ハッカソン Vol.8 努力賞</h2>
-            </div>{' '}
-          </div>{' '}
+              <h3>
+                作品 :{' '}
+                <a href="https://github.com/Sho0226/Chronicle" className={commonStyles.link}>
+                  Chronicle
+                </a>
+              </h3>
+            </div>
+          </div>
           <div className={commonStyles.achievementpadding} />
         </span>
         {data !== null && data !== '' ? data : 'No data available'}
