@@ -50,11 +50,9 @@ const Home: React.FC = () => {
   return (
     <>
       <Navbar ref={navbarRef} />
-      <div className={styles.container}>
-        <div className={styles.illustrationContainer}>
-          <div className={styles.overlay}>
-            <div className={styles.overlayText}>Welcome to my portfolio</div>
-          </div>
+      <div className={styles.illustrationContainer}>
+        <div className={styles.overlay}>
+          <div className={styles.overlayText}>Welcome to my portfolio</div>
         </div>
       </div>
       <div ref={cursorRef} className={styles.cursor} />

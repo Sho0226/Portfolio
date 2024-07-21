@@ -46,6 +46,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
             </h2>
           </span>
         </div>
+        <div className={commonStyles.contactpadding} />
         {data !== null && data !== '' ? data : 'No data available'}
       </div>
       <div ref={cursorRef} className={commonStyles.cursor} />
