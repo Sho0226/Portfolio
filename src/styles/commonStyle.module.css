@@ -10,7 +10,6 @@
 }
 
 .header {
-  font-size: large;
   font-weight: bold;
   user-select: none;
 }
@@ -127,7 +126,8 @@
 .skillSection,
 .worksSection {
   flex: 1;
-  margin-top: 20px;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
 }
 
 .frontstyle,
@@ -202,7 +202,7 @@
 }
 
 .achievementpadding {
-  margin-bottom: 270px;
+  margin-bottom: 50vh;
 }
 
 .link {
@@ -225,7 +225,11 @@
 
 .contactRow {
   width: 100%;
-  margin-top: 9.1%;
+  margin-top: 10vh;
+}
+
+.contactpadding {
+  padding-bottom: 16vh;
 }
 
 @media (width <= 768px) {
@@ -238,11 +242,15 @@
     display: contents;
   }
 
+  .worksSection {
+    margin-bottom: 24vh;
+  }
+
   .achievementpadding {
     margin-bottom: 125%;
   }
 
   .contactpadding {
-    padding-bottom: 100%;
+    padding-bottom: 25vh;
   }
 }
