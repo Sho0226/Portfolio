@@ -119,14 +119,31 @@
   color: #fff;
 }
 
+.skillstyle {
+  display: flex;
+  gap: 10vw; /* フロントエンドとバックエンドの間にスペースを追加 */
+  justify-content: center; /* コンテナの中央揃え */
+  width: 100%;
+}
+
 .skillSection,
 .worksSection {
+  flex: 1;
   margin-top: 20px;
+}
+
+.frontstyle,
+.backstyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .skillList,
 .worksList {
   padding: 0;
+  padding-top: 5%;
   list-style-type: none;
 }
 
