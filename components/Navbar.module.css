@@ -4,7 +4,6 @@
   justify-content: space-between;
   padding: 15px 30px;
   overflow-x: auto;
-  cursor: none; /* ナビバーでデフォルトカーソルを隠す */
   user-select: none;
   background-color: #a0b0ba;
 }
@@ -26,7 +25,6 @@
   font-size: 16px;
   color: #fff;
   text-decoration: none;
-  cursor: none; /* リンクでデフォルトカーソルを隠す */
   transition: color 0.3s;
 }
 
