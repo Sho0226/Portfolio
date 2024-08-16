@@ -35,6 +35,10 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
                       <span className={commonStyles.skillLevel}>★★★☆☆</span>
                     </li>
                     <li className={commonStyles.skillItem}>
+                      <span className={commonStyles.skillName}>Python</span>
+                      <span className={commonStyles.skillLevel}>★★★☆☆</span>
+                    </li>
+                    <li className={commonStyles.skillItem}>
                       <span className={commonStyles.skillName}>React</span>
                       <span className={commonStyles.skillLevel}>★★★☆☆</span>
                     </li>
@@ -55,11 +59,15 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
                     </li>
                     <li className={commonStyles.skillItem}>
                       <span className={commonStyles.skillName}>Prisma</span>
-                      <span className={commonStyles.skillLevel}>★☆☆☆☆</span>
+                      <span className={commonStyles.skillLevel}>★★☆☆☆</span>
                     </li>
                     <li className={commonStyles.skillItem}>
                       <span className={commonStyles.skillName}>Fastify</span>
-                      <span className={commonStyles.skillLevel}>★☆☆☆☆</span>
+                      <span className={commonStyles.skillLevel}>★★☆☆☆</span>
+                    </li>
+                    <li className={commonStyles.skillItem}>
+                      <span className={commonStyles.skillName}>PostgreSQL</span>
+                      <span className={commonStyles.skillLevel}>★★☆☆☆</span>
                     </li>
                   </ul>
                 </div>

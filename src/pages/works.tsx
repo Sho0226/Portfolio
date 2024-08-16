@@ -57,6 +57,16 @@ const worksData: Work[] = [
     ],
   },
   {
+    title: '',
+    description: '{web開発}',
+    games: [
+      {
+        name: 'todoList',
+        sourceUrl: 'https://github.com/Sho0226/todolist',
+      },
+    ],
+  },
+  {
     title: 'チーム開発',
     description: '',
     games: [
