@@ -7,7 +7,7 @@ export default function Hero() {
           Sho Katsumata
         </h1>
         <p className="mt-4 max-w-xl text-base text-black/60 sm:text-lg">
-          Full-stack Developer / Webのパフォーマンスと信頼性に関心があります。
+          Frontend Developer / テスト・UI/UX・アクセシビリティに関心があります。
         </p>
         <a
           href="#about"

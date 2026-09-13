@@ -5,7 +5,6 @@ Sho Katsumata のポートフォリオサイト。Vite + React + TypeScript + Ta
 ## Sections
 
 - About
-- Skills
 - Timeline
 - Works
 - Blog

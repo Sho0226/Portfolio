@@ -1,6 +1,5 @@
 const NAV_ITEMS = [
   { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
   { href: '#timeline', label: 'Timeline' },
   { href: '#works', label: 'Works' },
   { href: '#blog', label: 'Blog' },

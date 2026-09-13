@@ -13,16 +13,18 @@ export default function About() {
             Sho Katsumata
           </h2>
           <p className="mb-6 text-sm tracking-widest text-black/50 uppercase">
-            Full-stack Developer
+            Frontend Developer
           </p>
           <div className="space-y-4 text-base leading-relaxed text-black/80">
             <p>
-              株式会社PR TIMESに所属するソフトウェアエンジニア。Webのパフォーマンスや信頼性に関心があります。
+              株式会社PR TIMESに所属するソフトウェアエンジニア。フロントエンド開発をメインに、テストやUI/UX、アクセシビリティに関心があります。
             </p>
             <p>
               学生時代はプログラミングサークルでの活動、複数のハッカソン、長期インターンシップを通じて、TypeScriptを中心としたモダンなWeb開発の実践的スキルを磨きました。
             </p>
-            <p>現在は、ユーザーに価値を届けるプロダクト開発に取り組んでいます。</p>
+            <p>
+              現在は、実ブラウザテストやアクセシビリティチェックで品質を担保しながら、誰にとっても使いやすいUIを届けるプロダクト開発に取り組んでいます。
+            </p>
           </div>
         </div>
       </div>

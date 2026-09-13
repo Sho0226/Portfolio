@@ -3,7 +3,6 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Skills from './components/Skills';
 import Timeline from './components/Timeline';
 import Works from './components/Works';
 
@@ -20,7 +19,6 @@ function App() {
       <main id="main-content" tabIndex={-1}>
         <Hero />
         <About />
-        <Skills />
         <Timeline />
         <Works />
         <Blog />
