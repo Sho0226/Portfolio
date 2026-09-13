@@ -1,13 +1,40 @@
+import { useState } from 'react';
+import type { TimelineCategory } from '../data/timeline';
 import { timelineData } from '../data/timeline';
 
+const TABS: { key: TimelineCategory; label: string }[] = [
+  { key: 'student', label: '学生' },
+  { key: 'professional', label: '社会人' },
+];
+
 export default function Timeline() {
+  const [tab, setTab] = useState<TimelineCategory>('student');
+  const items = timelineData.filter((item) => item.category === tab);
+
   return (
     <section id="timeline" className="scroll-mt-20 border-t border-black/10">
       <div className="mx-auto max-w-3xl px-6 py-24">
         <p className="mb-2 text-xs tracking-widest text-black/50 uppercase">Timeline</p>
-        <h2 className="mb-12 text-3xl font-semibold">活動履歴</h2>
+        <h2 className="mb-8 text-3xl font-semibold">活動履歴</h2>
+
+        <div className="mb-12 flex gap-2">
+          {TABS.map(({ key, label }) => (
+            <button
+              key={key}
+              onClick={() => setTab(key)}
+              className={`px-4 py-2 text-sm tracking-widest uppercase transition-colors ${
+                tab === key
+                  ? 'bg-black text-white'
+                  : 'border border-black/15 text-black/60 hover:border-black hover:text-black'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
         <ol className="relative border-l border-black/15">
-          {timelineData.map((item) => {
+          {items.map((item) => {
             const Icon = item.icon;
             return (
               <li key={item.id} className="mb-10 ml-6 last:mb-0">

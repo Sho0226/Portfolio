@@ -1,3 +1,5 @@
+export type WorkCategory = 'game' | 'hackathon' | 'product';
+
 export type Work = {
   id: number;
   name: string;
@@ -5,6 +7,7 @@ export type Work = {
   image: string;
   fullDescription: string;
   technologies: string[];
+  category: WorkCategory;
   deploy?: string;
   sourceCode?: string;
   note?: string;
@@ -19,6 +22,7 @@ export const works: Work[] = [
     fullDescription:
       'このオセロゲームは、TypeScriptとReactを実践的に学ぶために開発を始めました。ゲームのロジックを構築することで、プログラミングの基礎と応用力を身につけることを目指します。',
     technologies: ['TypeScript', 'Next.js', 'React', 'CSS Modules'],
+    category: 'game',
     deploy: 'https://sho0226.github.io/NewOthello/',
     sourceCode: 'https://github.com/Sho0226/NewOthello/',
   },
@@ -30,6 +34,7 @@ export const works: Work[] = [
     fullDescription:
       'このマインスイーパーは、TypeScriptとReactを実践的に学ぶために開発を始めました。ゲームのロジックを構築することで、プログラミングの基礎と応用力を身につけることを目指します。',
     technologies: ['TypeScript', 'Next.js', 'React', 'CSS Modules'],
+    category: 'game',
     deploy: 'https://sho0226.github.io/minesweeper/',
     sourceCode: 'https://github.com/Sho0226/minesweeper/',
   },
@@ -41,6 +46,7 @@ export const works: Work[] = [
     fullDescription:
       'このテトリスは、TypeScriptとReactを実践的に学ぶために開発を始めました。ゲームのロジックを構築することで、プログラミングの基礎と応用力を身につけることを目指します。',
     technologies: ['TypeScript', 'Next.js', 'React', 'CSS Modules'],
+    category: 'game',
     deploy: 'https://sho0226.github.io/Tetris/',
     sourceCode: 'https://github.com/Sho0226/Tetris/',
   },
@@ -52,6 +58,7 @@ export const works: Work[] = [
     fullDescription:
       'このブロック崩しは、TypeScriptとReactを実践的に学ぶために開発を始めました。ゲームのロジックを構築することで、プログラミングの基礎と応用力を身につけることを目指します。',
     technologies: ['TypeScript', 'Next.js', 'React', 'CSS Modules'],
+    category: 'game',
     deploy: 'https://sho0226.github.io/Breaking-blocks/',
     sourceCode: 'https://github.com/Sho0226/Breaking-blocks/',
   },
@@ -63,6 +70,7 @@ export const works: Work[] = [
     fullDescription:
       'このチェスは、TypeScriptとReactを実践的に学ぶために開発を始めました。ゲームのロジックを構築することで、プログラミングの基礎と応用力を身につけることを目指します。',
     technologies: ['TypeScript', 'Next.js', 'React', 'CSS Modules'],
+    category: 'game',
     deploy: 'https://sho0226.github.io/Chess/',
     sourceCode: 'https://github.com/Sho0226/Chess/',
   },
@@ -74,6 +82,7 @@ export const works: Work[] = [
     fullDescription:
       'このライツアウトは、TypeScriptとReactを実践的に学ぶために開発を始めました。ゲームのロジックを構築することで、プログラミングの基礎と応用力を身につけることを目指します。',
     technologies: ['TypeScript', 'Next.js', 'React', 'CSS Modules'],
+    category: 'game',
     deploy: 'https://sho0226.github.io/LightsOut/',
     sourceCode: 'https://github.com/Sho0226/LightsOut/',
   },
@@ -94,6 +103,7 @@ export const works: Work[] = [
       'PostgreSQL',
       'Aspida',
     ],
+    category: 'product',
     deploy: 'https://todolist-6aet.onrender.com/',
     sourceCode: 'https://github.com/Sho0226/TodoList/',
   },
@@ -114,6 +124,7 @@ export const works: Work[] = [
       'PostgreSQL',
       'Aspida',
     ],
+    category: 'product',
     deploy: 'https://aiheadlines.onrender.com/',
     sourceCode: 'https://github.com/Sho0226/AIHeadlines',
   },
@@ -134,6 +145,7 @@ export const works: Work[] = [
       'PostgreSQL',
       'Aspida',
     ],
+    category: 'hackathon',
     sourceCode: 'https://todolist-6aet.onrender.com/',
   },
   {
@@ -153,6 +165,7 @@ export const works: Work[] = [
       'PostgreSQL',
       'Aspida',
     ],
+    category: 'hackathon',
     sourceCode: 'https://github.com/Sho0226/Fireworks-Display-Online',
   },
   {
@@ -162,6 +175,7 @@ export const works: Work[] = [
     image: '/imgs/pokemon.png',
     fullDescription: 'PokéAPIを用いてアウトプット中心にReact開発をしました。',
     technologies: ['TypeScript', 'Vite', 'PokéAPI'],
+    category: 'product',
     deploy: 'https://sho0226.github.io/pokemon-app/',
     sourceCode: 'https://github.com/Sho0226/Fireworks-Display-Online',
     note: 'https://qiita.com/Sho0226/items/c6d497c6f62ff68399fa',
@@ -182,6 +196,7 @@ export const works: Work[] = [
       'Supabase',
       'Vercel',
     ],
+    category: 'product',
     deploy: 'https://next-hono-template.vercel.app',
     sourceCode: 'https://github.com/Sho0226/Next-Hono-Template',
     note: 'https://zenn.dev/sho0226/articles/8f8e130371b117',
@@ -194,5 +209,6 @@ export const works: Work[] = [
     fullDescription:
       'TsDailyは、習慣的に学習するための勉強アプリです。毎日の学習を記録し、進捗を可視化することで、モチベーションを維持しやすくします。また、学習内容を振り返ることで、より深い理解を促進します。',
     technologies: ['TypeScript', 'Next.js', 'React'],
+    category: 'product',
   },
 ];

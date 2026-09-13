@@ -5,7 +5,7 @@ export default function About() {
         <img
           src="/imgs/profile.jpeg"
           alt="Sho Katsumata"
-          className="grayscale-img mx-auto h-48 w-48 rounded-full object-cover ring-1 ring-black/10"
+          className="mx-auto h-48 w-48 rounded-full object-cover ring-1 ring-black/10"
         />
         <div>
           <p className="mb-2 text-xs tracking-widest text-black/50 uppercase">About</p>
