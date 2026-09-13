@@ -14,7 +14,10 @@ export default function Header() {
         <a href="#top" className="text-sm font-semibold tracking-widest uppercase">
           Sho Katsumata
         </a>
-        <nav className="flex gap-4 overflow-x-auto text-xs tracking-widest uppercase sm:gap-6 sm:text-sm">
+        <nav
+          aria-label="メインナビゲーション"
+          className="flex gap-4 overflow-x-auto text-xs tracking-widest uppercase sm:gap-6 sm:text-sm"
+        >
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}

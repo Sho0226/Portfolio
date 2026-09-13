@@ -11,24 +11,31 @@ const LINKS = [
 
 export default function Contact() {
   return (
-    <footer id="contact" className="scroll-mt-20 border-t border-black/10 bg-black text-white">
+    <footer id="contact" aria-labelledby="contact-heading" className="scroll-mt-20 border-t border-black/10 bg-black text-white">
       <div className="mx-auto max-w-5xl px-6 py-24">
         <p className="mb-2 text-xs tracking-widest text-white/50 uppercase">Contact</p>
-        <h2 className="mb-8 text-3xl font-semibold">Get in touch</h2>
-        <div className="flex flex-wrap gap-4">
+        <h2 id="contact-heading" className="mb-8 text-3xl font-semibold">
+          Get in touch
+        </h2>
+        <ul className="flex flex-wrap gap-4">
           {LINKS.map(({ href, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-2 border border-white/20 px-4 py-2 text-sm transition-colors hover:border-white hover:bg-white hover:text-black"
-            >
-              {label}
-              <ArrowUpRight className="h-4 w-4 text-white/50 transition-colors group-hover:text-black" />
-            </a>
+            <li key={label}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 border border-white/20 px-4 py-2 text-sm transition-colors hover:border-white hover:bg-white hover:text-black"
+              >
+                {label}
+                <span className="sr-only">（新しいタブで開きます）</span>
+                <ArrowUpRight
+                  aria-hidden="true"
+                  className="h-4 w-4 text-white/50 transition-colors group-hover:text-black"
+                />
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
         <p className="mt-16 text-xs text-white/40">&copy; {new Date().getFullYear()} Sho Katsumata</p>
       </div>
     </footer>

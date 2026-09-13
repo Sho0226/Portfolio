@@ -1,5 +1,5 @@
 import { X } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import type { Work } from '../data/works';
 
 type Props = {
@@ -7,37 +7,50 @@ type Props = {
   onClose: () => void;
 };
 
+// Uses the native <dialog> element via showModal(): focus trap, Escape
+// handling, focus restoration, and inerting the rest of the page all come
+// from the browser instead of hand-rolled listeners.
 export default function WorkModal({ work, onClose }: Props) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
   useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    document.addEventListener('keydown', onKeyDown);
+    dialogRef.current?.showModal();
     document.body.style.overflow = 'hidden';
     return () => {
-      document.removeEventListener('keydown', onKeyDown);
       document.body.style.overflow = '';
     };
-  }, [onClose]);
+  }, []);
+
+  const closeOnBackdropClick = (event: React.MouseEvent<HTMLDialogElement>) => {
+    if (event.target === event.currentTarget) {
+      dialogRef.current?.close();
+    }
+  };
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
-      onClick={onClose}
+    <dialog
+      ref={dialogRef}
+      onClose={onClose}
+      onClick={closeOnBackdropClick}
+      aria-labelledby="work-modal-title"
+      className="m-auto max-h-[85vh] w-full max-w-lg overflow-y-auto bg-white p-0"
     >
-      <div
-        className="max-h-[85vh] w-full max-w-lg overflow-y-auto bg-white p-6"
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className="p-6">
         <div className="mb-4 flex items-start justify-between">
-          <h3 className="text-xl font-semibold">{work.name}</h3>
-          <button onClick={onClose} aria-label="閉じる" className="text-black/50 hover:text-black">
-            <X className="h-5 w-5" />
+          <h3 id="work-modal-title" className="text-xl font-semibold">
+            {work.name}
+          </h3>
+          <button
+            onClick={() => dialogRef.current?.close()}
+            aria-label="閉じる"
+            className="text-black/50 hover:text-black"
+          >
+            <X aria-hidden="true" className="h-5 w-5" />
           </button>
         </div>
         <img
           src={work.image}
-          alt={work.name}
+          alt={`${work.name}のスクリーンショット`}
           className="mb-4 h-48 w-full border border-black/10 object-cover"
         />
         <p className="mb-4 text-sm leading-relaxed text-black/80">{work.fullDescription}</p>
@@ -62,6 +75,7 @@ export default function WorkModal({ work, onClose }: Props) {
                 className="underline hover:no-underline"
               >
                 {work.sourceCode}
+                <span className="sr-only">（新しいタブで開きます）</span>
               </a>
             </p>
           )}
@@ -75,6 +89,7 @@ export default function WorkModal({ work, onClose }: Props) {
                 className="underline hover:no-underline"
               >
                 {work.deploy}
+                <span className="sr-only">（新しいタブで開きます）</span>
               </a>
             </p>
           )}
@@ -88,11 +103,12 @@ export default function WorkModal({ work, onClose }: Props) {
                 className="underline hover:no-underline"
               >
                 {work.note}
+                <span className="sr-only">（新しいタブで開きます）</span>
               </a>
             </p>
           )}
         </div>
       </div>
-    </div>
+    </dialog>
   );
 }

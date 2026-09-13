@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-5xl scroll-mt-20 px-6 py-24">
+    <section id="about" aria-labelledby="about-heading" className="mx-auto max-w-5xl scroll-mt-20 px-6 py-24">
       <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[200px_1fr]">
         <img
           src="/imgs/profile.jpeg"
@@ -9,7 +9,9 @@ export default function About() {
         />
         <div>
           <p className="mb-2 text-xs tracking-widest text-black/50 uppercase">About</p>
-          <h2 className="mb-1 text-3xl font-semibold">Sho Katsumata</h2>
+          <h2 id="about-heading" className="mb-1 text-3xl font-semibold">
+            Sho Katsumata
+          </h2>
           <p className="mb-6 text-sm tracking-widest text-black/50 uppercase">
             Full-stack Developer
           </p>

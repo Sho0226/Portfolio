@@ -10,13 +10,21 @@ import Works from './components/Works';
 function App() {
   return (
     <div className="bg-white text-black">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-black focus:px-4 focus:py-2 focus:text-white"
+      >
+        本文へスキップ
+      </a>
       <Header />
-      <Hero />
-      <About />
-      <Skills />
-      <Timeline />
-      <Works />
-      <Blog />
+      <main id="main-content" tabIndex={-1}>
+        <Hero />
+        <About />
+        <Skills />
+        <Timeline />
+        <Works />
+        <Blog />
+      </main>
       <Contact />
     </div>
   );
