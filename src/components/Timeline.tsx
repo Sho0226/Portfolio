@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { TimelineCategory } from '../data/timeline';
 import { timelineData } from '../data/timeline';
+import { filterTimelineByCategory } from '../lib/filters';
 
 const TABS: { key: TimelineCategory; label: string }[] = [
   { key: 'student', label: '学生' },
@@ -9,7 +10,7 @@ const TABS: { key: TimelineCategory; label: string }[] = [
 
 export default function Timeline() {
   const [tab, setTab] = useState<TimelineCategory>('student');
-  const items = timelineData.filter((item) => item.category === tab);
+  const items = filterTimelineByCategory(timelineData, tab);
 
   return (
     <section id="timeline" className="scroll-mt-20 border-t border-black/10">

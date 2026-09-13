@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { WorkCategory } from '../data/works';
 import { works } from '../data/works';
+import { filterWorksByCategory } from '../lib/filters';
 import WorkModal from './WorkModal';
 
 const TABS: { key: WorkCategory | 'all'; label: string }[] = [
@@ -14,7 +15,7 @@ export default function Works() {
   const [tab, setTab] = useState<WorkCategory | 'all'>('all');
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
-  const filtered = tab === 'all' ? works : works.filter((w) => w.category === tab);
+  const filtered = filterWorksByCategory(works, tab);
   const selected = works.find((w) => w.id === selectedId) ?? null;
 
   return (
