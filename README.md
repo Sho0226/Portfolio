@@ -40,8 +40,11 @@ npm run test:watch   # watchモード
 - アクセシビリティチェック: `axe-core` + `vitest-axe`（`toHaveNoViolations` matcher）で、初期表示・タブ切り替え後・モーダル表示中の各状態にa11y違反がないことを検証
 - GitHub Actions（`.github/workflows/test.yml`）で push / PR ごとにビルドとテスト一式を実行し、a11y違反を含むテスト失敗でCIを落とす
 
-## Deploy (Cloudflare Pages)
+## Deploy (Cloudflare Workers)
 
-- Build command: `npm run build`
-- Output directory: `dist`
-- ルーティングは1ページ内アンカーのみのため、SPA用の `_redirects` は不要。
+Cloudflare Workers の静的アセット配信でホスティング（`wrangler.jsonc`）。
+
+- URL: https://portfolio.sho-hono-app.workers.dev
+- main への push で GitHub Actions がテスト（a11y含む）成功後に自動デプロイ
+- 手動デプロイ: `npm run build && npx wrangler deploy`
+- 必要な GitHub Secrets: `CLOUDFLARE_API_TOKEN`（Workers Scripts: Edit 権限）, `CLOUDFLARE_ACCOUNT_ID`
